@@ -173,12 +173,18 @@ h6,
 
 @media (max-width: 991.98px) {
     .navbar-collapse {
+        display: none !important;
         background: #FFFFFF;
         border-top: 1px solid rgba(0, 0, 0, .07);
         margin-top: 8px;
         padding: 8px 15px;
         border-radius: 0 0 8px 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    }
+
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+        display: block !important;
     }
 
     .navbar .navbar-nav {
@@ -530,6 +536,8 @@ h6,
 
 /*** Navbar Dropdown ***/
 .navbar .dropdown-menu {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, .08);
     border-top: 3px solid var(--secondary);
     box-shadow: 0 0 30px rgba(0, 0, 0, .08);
 }
@@ -1022,7 +1030,8 @@ h6,
 
 .services-dropdown .dropdown-menu {
     min-width: 220px;
-    border: none;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, .08);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 8px 0;
@@ -1328,6 +1337,11 @@ h6,
 
     .whatsapp-float-text {
         display: none;
+    }
+
+    .back-to-top {
+        right: 24px;
+        bottom: 84px;
     }
 
     .whatsapp-float {
