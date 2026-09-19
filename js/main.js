@@ -82,11 +82,16 @@
             url: formEndpoint,
             method: 'POST',
             data: $(form).serialize(),
-            dataType: 'json'
+            dataType: 'json',
+            headers: {
+                'Accept': 'application/json'
+            }
         }).done(function (res) {
             if (res && String(res.success) === 'false') {
+                var reason = (res.message || '').trim();
                 feedback.addClass('alert-warning').html(
                     '<i class="fa fa-envelope me-2"></i>We could not send your message right now. ' +
+                    (reason ? reason + ' ' : '') +
                     'Please email us at <a href="' + mailTo + '" class="alert-link">info@omacoprofessionalservices.com</a> ' +
                     'or call +234 803 841 7610.'
                 );
